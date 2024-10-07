@@ -20,5 +20,6 @@ public final class mainclass extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SpeedHack(), this);
         getServer().getPluginManager().registerEvents(new JumpHack(), this);
         getServer().getPluginManager().registerEvents(new InfiniteHealth(), this);
+        getServer().getPluginManager().registerEvents(new BoostCraft(), this);
     }
 }

@@ -13,7 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class BodyClass implements Listener {
     public void openBodyInventory(Player player) {
-        Inventory bodyInventory = Bukkit.createInventory(null, 9, "Body Hack Menu");
+        Inventory bodyInventory = Bukkit.createInventory(null, 9, ChatColor.AQUA + "Body Hack Menu");
 
         ItemStack speedHackBoots = new ItemStack(Material.DIAMOND_BOOTS);
         ItemMeta speedMeta = speedHackBoots.getItemMeta();
@@ -31,6 +31,14 @@ public class BodyClass implements Listener {
         }
         bodyInventory.setItem(2, InfiniteHealth);
 
+        ItemStack BoostCraft = new ItemStack(Material.DIAMOND_PICKAXE);
+        ItemMeta BoostCraftMeta = BoostCraft.getItemMeta();
+        if (BoostCraftMeta != null) {
+            BoostCraftMeta.setDisplayName(ChatColor.YELLOW + "Boost Craft Hack");
+            BoostCraft.setItemMeta(BoostCraftMeta);
+        }
+        bodyInventory.setItem(3, BoostCraft);
+
         ItemStack JumpHackLeggings = new ItemStack(Material.DIAMOND_LEGGINGS);
         ItemMeta teleportMeta = JumpHackLeggings.getItemMeta();
         if (teleportMeta != null) {
@@ -46,7 +54,7 @@ public class BodyClass implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        if (!event.getView().getTitle().equals("Body Hack Menu")) return;
+        if (!event.getView().getTitle().equals(ChatColor.AQUA + "Body Hack Menu")) return;
 
         Player player = (Player) event.getWhoClicked();
         ItemStack clickedItem = event.getCurrentItem();
@@ -71,6 +79,13 @@ public class BodyClass implements Listener {
             player.closeInventory();
             InfiniteHealth infiniteHealth = new InfiniteHealth();
             infiniteHealth.openBodyInventory(player);
+        }
+
+        if (clickedItem.getType() == Material.DIAMOND_PICKAXE) {
+            event.setCancelled(true);
+            player.closeInventory();
+            BoostCraft BoostCraft = new BoostCraft();
+            BoostCraft.openBodyInventory(player);
         }
     }
 }
