@@ -23,6 +23,14 @@ public class BodyClass implements Listener {
         }
         bodyInventory.setItem(0, speedHackBoots);
 
+        ItemStack InfiniteHealth = new ItemStack(Material.DIAMOND_CHESTPLATE);
+        ItemMeta HealthMeta = InfiniteHealth.getItemMeta();
+        if (HealthMeta != null) {
+            HealthMeta.setDisplayName(ChatColor.RED + "Infinite Health Hack");
+            InfiniteHealth.setItemMeta(HealthMeta);
+        }
+        bodyInventory.setItem(2, InfiniteHealth);
+
         ItemStack JumpHackLeggings = new ItemStack(Material.DIAMOND_LEGGINGS);
         ItemMeta teleportMeta = JumpHackLeggings.getItemMeta();
         if (teleportMeta != null) {
@@ -33,6 +41,8 @@ public class BodyClass implements Listener {
 
         player.openInventory(bodyInventory);
     }
+
+
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
@@ -54,6 +64,13 @@ public class BodyClass implements Listener {
             player.closeInventory();
             JumpHack jumpHack = new JumpHack();
             jumpHack.openBodyInventory(player);
+        }
+
+        if (clickedItem.getType() == Material.DIAMOND_CHESTPLATE) {
+            event.setCancelled(true);
+            player.closeInventory();
+            InfiniteHealth infiniteHealth = new InfiniteHealth();
+            infiniteHealth.openBodyInventory(player);
         }
     }
 }
