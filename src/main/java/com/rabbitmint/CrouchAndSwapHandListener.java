@@ -32,7 +32,7 @@ public class CrouchAndSwapHandListener implements Listener {
     }
 
     private void openMenu(Player player) {
-        Inventory menuInventory = Bukkit.createInventory(null, 9, "Hack Menu");
+        Inventory menuInventory = Bukkit.createInventory(null, 9, ChatColor.DARK_RED + "Hack Menu");
 
         ItemStack body = new ItemStack(Material.ARMOR_STAND);
         ItemMeta itemMeta2 = body.getItemMeta();
@@ -47,7 +47,7 @@ public class CrouchAndSwapHandListener implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        if (!event.getView().getTitle().equals("Hack Menu")) return;
+        if (!event.getView().getTitle().equals(ChatColor.DARK_RED + "Hack Menu")) return;
 
         Player player = (Player) event.getWhoClicked();
         ItemStack clickedItem = event.getCurrentItem();

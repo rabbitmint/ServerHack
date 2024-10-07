@@ -13,7 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class JumpHack implements Listener {
     public void openBodyInventory(Player player) {
-        Inventory jumpInventory = Bukkit.createInventory(null, 9, "Jump Hack Menu");
+        Inventory jumpInventory = Bukkit.createInventory(null, 9, ChatColor.LIGHT_PURPLE + "Jump Hack Menu");
 
         ItemStack jump10 = new ItemStack(Material.LEATHER_LEGGINGS);
         ItemMeta meta10 = jump10.getItemMeta();
@@ -68,7 +68,7 @@ public class JumpHack implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        if (!event.getView().getTitle().equals("Jump Hack Menu")) return;
+        if (!event.getView().getTitle().equals(ChatColor.LIGHT_PURPLE + "Jump Hack Menu")) return;
 
         Player player = (Player) event.getWhoClicked();
         ItemStack clickedItem = event.getCurrentItem();

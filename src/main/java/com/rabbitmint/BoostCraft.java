@@ -13,7 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class BoostCraft implements Listener {
     public void openBodyInventory(Player player) {
-        Inventory BoostCraftInventory = Bukkit.createInventory(null, 9, "Boost Craft Hack Menu");
+        Inventory BoostCraftInventory = Bukkit.createInventory(null, 9, ChatColor.YELLOW + "Boost Craft Hack Menu");
 
         ItemStack BoostCraft10 = new ItemStack(Material.BLUE_STAINED_GLASS_PANE);
         ItemMeta meta10 = BoostCraft10.getItemMeta();
@@ -38,7 +38,7 @@ public class BoostCraft implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        if (!event.getView().getTitle().equals("Boost Craft Hack Menu")) return;
+        if (!event.getView().getTitle().equals(ChatColor.YELLOW + "Boost Craft Hack Menu")) return;
 
         Player player = (Player) event.getWhoClicked();
         ItemStack clickedItem = event.getCurrentItem();

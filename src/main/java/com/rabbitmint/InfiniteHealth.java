@@ -13,7 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class InfiniteHealth implements Listener {
     public void openBodyInventory(Player player) {
-        Inventory InfiniteHealthInventory = Bukkit.createInventory(null, 9, "Infinite Health Hack Menu");
+        Inventory InfiniteHealthInventory = Bukkit.createInventory(null, 9, ChatColor.RED + "Infinite Health Hack Menu");
 
         ItemStack InfiniteHealth10 = new ItemStack(Material.BLUE_STAINED_GLASS_PANE);
         ItemMeta meta10 = InfiniteHealth10.getItemMeta();
@@ -38,7 +38,7 @@ public class InfiniteHealth implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        if (!event.getView().getTitle().equals("Infinite Health Hack Menu")) return;
+        if (!event.getView().getTitle().equals(ChatColor.RED + "Infinite Health Hack Menu")) return;
 
         Player player = (Player) event.getWhoClicked();
         ItemStack clickedItem = event.getCurrentItem();

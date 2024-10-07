@@ -13,7 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class SpeedHack implements Listener {
     public void openBodyInventory(Player player) {
-        Inventory speedInventory = Bukkit.createInventory(null, 9, "Speed Hack Menu");
+        Inventory speedInventory = Bukkit.createInventory(null, 9, ChatColor.AQUA + "Speed Hack Menu");
 
         ItemStack speed10 = new ItemStack(Material.LEATHER_BOOTS);
         ItemMeta meta10 = speed10.getItemMeta();
@@ -68,7 +68,7 @@ public class SpeedHack implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        if (!event.getView().getTitle().equals("Speed Hack Menu")) return;
+        if (!event.getView().getTitle().equals(ChatColor.AQUA + "Speed Hack Menu")) return;
 
         Player player = (Player) event.getWhoClicked();
         ItemStack clickedItem = event.getCurrentItem();
