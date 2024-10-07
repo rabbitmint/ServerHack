@@ -1,0 +1,4 @@
+name: ServerHack
+version: '1.0-SNAPSHOT'
+main: com.rabbitmint.mainclass
+api-version: '1.21'
