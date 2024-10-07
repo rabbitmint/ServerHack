@@ -75,7 +75,7 @@ public class SpeedHack implements Listener {
         if (clickedItem == null) return;
         event.setCancelled(true);
 
-        if (clickedItem.getType() == Material.GRAY_STAINED_GLASS_PANE) {
+        if (clickedItem.getType() == Material.RED_STAINED_GLASS_PANE) {
             String playerName = player.getName();
             String clearCommand = "effect clear " + playerName + " minecraft:speed";
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), clearCommand);
