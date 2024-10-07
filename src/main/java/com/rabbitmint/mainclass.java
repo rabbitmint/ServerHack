@@ -13,8 +13,11 @@ public final class mainclass extends JavaPlugin {
         getLogger().info("합법핵 플러그인이 활성화 되었습니다.");
         getLogger().info("제작 : 민트토끼 , 아이디어 : EY");
 
+        new NoFallDamage(this);
+
         getServer().getPluginManager().registerEvents(new CrouchAndSwapHandListener(), this);
         getServer().getPluginManager().registerEvents(new BodyClass(), this);
         getServer().getPluginManager().registerEvents(new SpeedHack(), this);
+        getServer().getPluginManager().registerEvents(new JumpHack(), this);
     }
 }

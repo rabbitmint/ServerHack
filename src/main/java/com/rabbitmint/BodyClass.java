@@ -15,11 +15,22 @@ public class BodyClass implements Listener {
     public void openBodyInventory(Player player) {
         Inventory bodyInventory = Bukkit.createInventory(null, 9, "Body Hack Menu");
 
-        ItemStack diamondBoots = new ItemStack(Material.DIAMOND_BOOTS);
-        ItemMeta meta = diamondBoots.getItemMeta();
-        meta.setDisplayName(ChatColor.AQUA + "Speed Hack");
-        diamondBoots.setItemMeta(meta);
-        bodyInventory.setItem(0, diamondBoots);
+        ItemStack speedHackBoots = new ItemStack(Material.DIAMOND_BOOTS);
+        ItemMeta speedMeta = speedHackBoots.getItemMeta();
+        if (speedMeta != null) {
+            speedMeta.setDisplayName(ChatColor.AQUA + "Speed Hack");
+            speedHackBoots.setItemMeta(speedMeta);
+        }
+        bodyInventory.setItem(0, speedHackBoots);
+
+        ItemStack JumpHackLeggings = new ItemStack(Material.DIAMOND_LEGGINGS);
+        ItemMeta teleportMeta = JumpHackLeggings.getItemMeta();
+        if (teleportMeta != null) {
+            teleportMeta.setDisplayName(ChatColor.LIGHT_PURPLE + "Jump Hack");
+            JumpHackLeggings.setItemMeta(teleportMeta);
+        }
+        bodyInventory.setItem(1, JumpHackLeggings);
+
         player.openInventory(bodyInventory);
     }
 
@@ -36,6 +47,13 @@ public class BodyClass implements Listener {
             player.closeInventory();
             SpeedHack speedHack = new SpeedHack();
             speedHack.openBodyInventory(player);
+        }
+
+        if (clickedItem.getType() == Material.DIAMOND_LEGGINGS) {
+            event.setCancelled(true);
+            player.closeInventory();
+            JumpHack jumpHack = new JumpHack();
+            jumpHack.openBodyInventory(player);
         }
     }
 }
