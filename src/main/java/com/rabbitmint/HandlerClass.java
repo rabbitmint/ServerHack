@@ -30,8 +30,6 @@ public class HandlerClass implements Listener {
             JumpHackLeggings.setItemMeta(teleportMeta);
         }
         bodyInventory.setItem(1, JumpHackLeggings);
-
-        player.openInventory(bodyInventory);
     
         ItemStack InfiniteHealth = new ItemStack(Material.DIAMOND_CHESTPLATE);
         ItemMeta HealthMeta = InfiniteHealth.getItemMeta();
@@ -48,6 +46,8 @@ public class HandlerClass implements Listener {
             BoostCraft.setItemMeta(BoostCraftMeta);
         }
         bodyInventory.setItem(3, BoostCraft);
+
+        player.openInventory(bodyInventory);
     }
 
 
