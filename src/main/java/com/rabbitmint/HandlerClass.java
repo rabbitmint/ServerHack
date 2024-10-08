@@ -15,21 +15,21 @@ public class HandlerClass implements Listener {
     public void openBodyInventory(Player player) {
         Inventory bodyInventory = Bukkit.createInventory(null, 9, ChatColor.BLUE + "Utility Hack Menu");
 
-        ItemStack speedHackBoots = new ItemStack(Material.DIAMOND_BOOTS);
-        ItemMeta speedMeta = speedHackBoots.getItemMeta();
-        if (speedMeta != null) {
-            speedMeta.setDisplayName(ChatColor.AQUA + "X-Ray Hack");
-            speedHackBoots.setItemMeta(speedMeta);
+        ItemStack xrayitem = new ItemStack(Material.SPYGLASS);
+        ItemMeta xrayMeta = xrayitem.getItemMeta();
+        if (xrayMeta != null) {
+            xrayMeta.setDisplayName(ChatColor.AQUA + "X-Ray Hack");
+            xrayitem.setItemMeta(speedMeta);
         }
-        bodyInventory.setItem(0, speedHackBoots);
+        bodyInventory.setItem(0, xrayitem);
 
-        ItemStack JumpHackLeggings = new ItemStack(Material.DIAMOND_LEGGINGS);
-        ItemMeta teleportMeta = JumpHackLeggings.getItemMeta();
-        if (teleportMeta != null) {
-            teleportMeta.setDisplayName(ChatColor.LIGHT_PURPLE + "Anti Knockback");
-            JumpHackLeggings.setItemMeta(teleportMeta);
+        ItemStack antikitem = new ItemStack(Material.SHIELD);
+        ItemMeta antikMeta = antikitem.getItemMeta();
+        if (antikMeta != null) {
+            antikMeta.setDisplayName(ChatColor.LIGHT_PURPLE + "Anti Knockback");
+            antikitem.setItemMeta(antikMeta);
         }
-        bodyInventory.setItem(1, JumpHackLeggings);
+        bodyInventory.setItem(1, antikitem);
     
         ItemStack InfiniteHealth = new ItemStack(Material.DIAMOND_CHESTPLATE);
         ItemMeta HealthMeta = InfiniteHealth.getItemMeta();
