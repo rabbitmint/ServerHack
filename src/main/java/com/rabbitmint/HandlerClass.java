@@ -53,38 +53,38 @@ public class HandlerClass implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        if (!event.getView().getTitle().equals(ChatColor.BLUE + "Body Hack Menu")) return;
+        if (!event.getView().getTitle().equals(ChatColor.BLUE + "Utility Hack Menu")) return;
 
         Player player = (Player) event.getWhoClicked();
         ItemStack clickedItem = event.getCurrentItem();
         if (clickedItem == null) return;
 
-        if (clickedItem.getType() == Material.DIAMOND_BOOTS) {
+        if (clickedItem.getType() == Material.SPYGLASS) {
             event.setCancelled(true);
             player.closeInventory();
-            SpeedHack speedHack = new SpeedHack();
-            speedHack.openBodyInventory(player);
+            Xray xRay = new Xray();
+            xRay.openBodyInventory(player);
         }
 
-        if (clickedItem.getType() == Material.DIAMOND_LEGGINGS) {
+        if (clickedItem.getType() == Material.SHIELD) {
             event.setCancelled(true);
             player.closeInventory();
-            JumpHack jumpHack = new JumpHack();
-            jumpHack.openBodyInventory(player);
+            Antik antik = new Antik();
+            antik.openBodyInventory(player);
         }
 
-        if (clickedItem.getType() == Material.DIAMOND_CHESTPLATE) {
+        if (clickedItem.getType() == Material.BOW) {
             event.setCancelled(true);
             player.closeInventory();
-            InfiniteHealth infiniteHealth = new InfiniteHealth();
-            infiniteHealth.openBodyInventory(player);
+            Bow bow = new Bow();
+            bow.openBodyInventory(player);
         }
 
-        if (clickedItem.getType() == Material.DIAMOND_PICKAXE) {
+        if (clickedItem.getType() == Material.DIAMOND_SWORDS) {
             event.setCancelled(true);
             player.closeInventory();
-            BoostCraft BoostCraft = new BoostCraft();
-            BoostCraft.openBodyInventory(player);
+            Aura aura = new Aura();
+            Aura.openBodyInventory(player);
         }
     }
 }
