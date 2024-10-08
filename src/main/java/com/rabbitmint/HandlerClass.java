@@ -19,7 +19,7 @@ public class HandlerClass implements Listener {
         ItemMeta xrayMeta = xrayitem.getItemMeta();
         if (xrayMeta != null) {
             xrayMeta.setDisplayName(ChatColor.AQUA + "X-Ray Hack");
-            xrayitem.setItemMeta(speedMeta);
+            xrayitem.setItemMeta(xrayMeta);
         }
         bodyInventory.setItem(0, xrayitem);
 
@@ -35,17 +35,18 @@ public class HandlerClass implements Listener {
         ItemMeta bowMeta = bowitem.getItemMeta();
         if (bowMeta != null) {
             bowMeta.setDisplayName(ChatColor.RED + "Auto Bow Hack");
-            bowitem.setItemMeta(HealthMeta);
+            bowitem.setItemMeta(bowMeta);
         }
         bodyInventory.setItem(2, bowitem);
 
-        ItemStack BoostCraft = new ItemStack(Material.DIAMOND_SWORDS);
-        ItemMeta BoostCraftMeta = BoostCraft.getItemMeta();
-        if (BoostCraftMeta != null) {
-            BoostCraftMeta.setDisplayName(ChatColor.YELLOW + "Kill Aura Hack");
-            BoostCraft.setItemMeta(BoostCraftMeta);
+        ItemStack auraitem = new ItemStack(Material.DIAMOND_SWORDS);
+        ItemMeta auraMeta = auraitem.getItemMeta();
+        if (auraMeta != null) {
+            auraMeta.setDisplayName(ChatColor.YELLOW + "Kill Aura Hack");
+            auraitem.setItemMeta(auraMeta);
         }
-        bodyInventory.setItem(3, bowitem);
+        bodyInventory.setItem(3, auraitem);
+
         player.openInventory(bodyInventory);
     }
 
