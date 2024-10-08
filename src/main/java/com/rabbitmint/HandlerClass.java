@@ -31,13 +31,13 @@ public class HandlerClass implements Listener {
         }
         bodyInventory.setItem(1, antikitem);
     
-        ItemStack InfiniteHealth = new ItemStack(Material.DIAMOND_CHESTPLATE);
-        ItemMeta HealthMeta = InfiniteHealth.getItemMeta();
-        if (HealthMeta != null) {
-            HealthMeta.setDisplayName(ChatColor.RED + "Auto Bow Hack");
-            InfiniteHealth.setItemMeta(HealthMeta);
+        ItemStack bowitem = new ItemStack(Material.BOW);
+        ItemMeta bowMeta = bowitem.getItemMeta();
+        if (bowMeta != null) {
+            bowMeta.setDisplayName(ChatColor.RED + "Auto Bow Hack");
+            bowitem.setItemMeta(HealthMeta);
         }
-        bodyInventory.setItem(2, InfiniteHealth);
+        bodyInventory.setItem(2, bowitem);
 
         ItemStack BoostCraft = new ItemStack(Material.DIAMOND_SWORDS);
         ItemMeta BoostCraftMeta = BoostCraft.getItemMeta();
@@ -45,8 +45,7 @@ public class HandlerClass implements Listener {
             BoostCraftMeta.setDisplayName(ChatColor.YELLOW + "Kill Aura Hack");
             BoostCraft.setItemMeta(BoostCraftMeta);
         }
-        bodyInventory.setItem(3, BoostCraft);
-
+        bodyInventory.setItem(3, bowitem);
         player.openInventory(bodyInventory);
     }
 
